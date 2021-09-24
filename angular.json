@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pruebaAT": {
+    "PruebaATSistemas": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,17 +20,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pruebaAT",
+            "outputPath": "dist/PruebaATSistemas",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -72,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "pruebaAT:build:production"
+              "browserTarget": "PruebaATSistemas:build:production"
             },
             "development": {
-              "browserTarget": "pruebaAT:build:development"
+              "browserTarget": "PruebaATSistemas:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,29 +81,12 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pruebaAT:build"
+            "browserTarget": "PruebaATSistemas:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
-          }
-        }
+        "test": {}
       }
     }
   },
-  "defaultProject": "pruebaAT"
+  "defaultProject": "PruebaATSistemas"
 }
