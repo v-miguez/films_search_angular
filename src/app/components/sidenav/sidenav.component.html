@@ -1,7 +1,12 @@
 <div class="side-nav">
   <div class="title-row">
     <span> {{ 'sidenav.title' | transloco }}</span>
-    <mat-icon aria-hidden="false" aria-label="Example menu icon" class="icon">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example menu icon"
+      class="icon"
+      (click)="hideMenuClick()"
+    >
       close
     </mat-icon>
   </div>

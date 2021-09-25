@@ -4,15 +4,18 @@ import { SidenavComponent } from './sidenav.component'
 import { getTranslocoModule } from '../../transloco-testing.module'
 import { MaterialModule } from '../../material.module'
 import { SidenavelementComponent } from './components/sidenavelement/sidenavelement.component'
+import { provideMockStore } from 'ngrx-mockstore'
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent
   let fixture: ComponentFixture<SidenavComponent>
 
   beforeEach(async () => {
+    const initialState = { show: false }
     await TestBed.configureTestingModule({
       declarations: [SidenavComponent, SidenavelementComponent],
-      imports: [getTranslocoModule(), MaterialModule]
+      imports: [getTranslocoModule(), MaterialModule],
+      providers: [provideMockStore({ initialState })]
     }).compileComponents()
   })
 
