@@ -27,7 +27,7 @@ export class TranslocoHttpLoader implements TranslocoLoader {
         availableLangs: ['en', 'es'],
         defaultLang: 'en',
         // Remove this option if your application doesn't support changing language in runtime.
-        reRenderOnLangChange: true,
+        reRenderOnLangChange: true
       })
     },
     { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader }
