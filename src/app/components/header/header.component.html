@@ -3,18 +3,21 @@
     aria-hidden="false"
     aria-label="Example menu icon"
     class="header-icon"
-    *ngIf="showMenu"
+    *ngIf="showMenuIcon | async; else arrowIcon"
     (click)="showMenuClick()"
   >
     menu
   </mat-icon>
+
+  <span class="header-title">{{ pageTitle }}</span>
+</div>
+
+<ng-template #arrowIcon>
   <mat-icon
     aria-hidden="false"
     aria-label="Example menu icon"
     class="header-icon"
-    *ngIf="!showMenu"
   >
     arrow_back
   </mat-icon>
-  <span class="header-title">{{ pageTitle }}</span>
-</div>
+</ng-template>

@@ -1,10 +1,6 @@
-import { Action } from '@ngrx/store'
 import { ShowMenu as ShowMenuModel } from '../shared/models/MenuElement.model'
 import * as MenuActions from '../actions/menu.actions'
 
-const initialState: ShowMenuModel = {
-  show: false
-}
 
 export function reducer(
   state: ShowMenuModel = { show: false },

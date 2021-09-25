@@ -12,7 +12,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component'
 import { SidenavelementComponent } from './components/sidenav/components/sidenavelement/sidenavelement.component'
 import { StoreModule } from '@ngrx/store'
 import { reducer as menuReducer } from './reducers/menu.reducer'
-
+import { reducer as headerReducer } from './reducers/header.reducer'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,8 @@ import { reducer as menuReducer } from './reducers/menu.reducer'
     TranslocoRootModule,
     MaterialModule,
     StoreModule.forRoot({
-      showMenu: menuReducer
+      showMenu: menuReducer,
+      showMenuIcon: headerReducer
     })
   ],
   providers: [],
