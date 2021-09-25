@@ -1,0 +1,18 @@
+@import '../../../variables.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+
+  padding: $xtiny $mini;
+
+  background-color: $p-dark;
+  color: $base-color;
+  .header-title {
+    margin-left: $tiny;
+    font-size: $font-medium;
+  }
+  .header-icon {
+    cursor: pointer;
+  }
+}

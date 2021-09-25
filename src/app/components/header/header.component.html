@@ -1,0 +1,19 @@
+<div class="header">
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Example menu icon"
+    class="header-icon"
+    *ngIf="showMenu"
+  >
+    menu
+  </mat-icon>
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Example menu icon"
+    class="header-icon"
+    *ngIf="!showMenu"
+  >
+    arrow_back
+  </mat-icon>
+  <span class="header-title">{{ pageTitle }}</span>
+</div>

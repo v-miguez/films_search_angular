@@ -13,7 +13,7 @@ import { Injectable, NgModule } from '@angular/core'
 export class TranslocoHttpLoader implements TranslocoLoader {
   constructor(private http: HttpClient) {}
 
-  getTranslation(lang: string) {
+  getTranslation(lang: string): any {
     return this.http.get<Translation>(`/assets/i18n/${lang}.json`)
   }
 }

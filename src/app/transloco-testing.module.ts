@@ -5,7 +5,7 @@ import {
 import en from '../assets/i18n/en.json'
 import es from '../assets/i18n/es.json'
 
-export function getTranslocoModule(options: TranslocoTestingOptions = {}) {
+export function getTranslocoModule(options: TranslocoTestingOptions = {}): any {
   return TranslocoTestingModule.forRoot({
     langs: { en, es },
     translocoConfig: {
