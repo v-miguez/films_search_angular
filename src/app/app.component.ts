@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { TranslocoService } from '@ngneat/transloco'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core'
 })
 export class AppComponent {
   title = 'PruebaATSistemas'
+  selectLang = 'es'
+  constructor(private translocoService: TranslocoService) {
+    this.selectLanguage()
+  }
+
+  selectLanguage(language: string = this.selectLang): void {
+    this.translocoService.setActiveLang(language)
+  }
 }
