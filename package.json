@@ -14,16 +14,17 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run lint --fix && ng test --watch=false",
+      "pre-commit": "pretty-quick --staged && npm run lint --fix && npm run test --watch=false",
       "pre-push": "ng build --aot true"
     }
   },
   "lint-staged": {
-    "{src,routes}/**/*.{js,jsx,ts,tsx}": [
-      "eslint",
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js,ts}": [
+        "eslint --fix"
+     ],
+     "*.{html,scss}": [
+        "prettier --write"
+     ]
   },
   "private": true,
   "dependencies": {
