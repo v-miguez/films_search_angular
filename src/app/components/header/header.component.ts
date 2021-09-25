@@ -4,6 +4,7 @@ import { AppState } from '../../app.state'
 import { HeaderProperties } from '../../shared/models/Header.model'
 import { Observable } from 'rxjs'
 import { DispatchersService } from '../../services/dispatchers.service'
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,8 @@ export class HeaderComponent {
 
   constructor(
     private store: Store<AppState>,
-    private dispatchersService: DispatchersService
+    private dispatchersService: DispatchersService,
+    private location: Location
   ) {
     this.headerProperties = this.store.select('headerProperties')
   }
@@ -26,10 +28,7 @@ export class HeaderComponent {
     this.dispatchersService.toggleSidenav(true)
   }
 
-  changeIcon() {
-    this.dispatchersService.setHeaderProperties({
-      menuIcon: false,
-      title: 'HOla'
-    })
+  goBack() {
+    this.location.back()
   }
 }

@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core'
+import { Router } from '@angular/router'
+import { MenuElement } from '../../../../shared/models/MenuElement.model'
 
 @Component({
   selector: 'app-sidenavelement',
@@ -6,5 +8,11 @@ import { Component, Input } from '@angular/core'
   styleUrls: ['./sidenavelement.component.scss']
 })
 export class SidenavelementComponent {
-  @Input() title: string
+  @Input() elementData: MenuElement
+
+  constructor(private router: Router) {}
+
+  goTo(path: string) {
+    this.router.navigate([''])
+  }
 }

@@ -14,13 +14,17 @@ import { StoreModule } from '@ngrx/store'
 import { reducer as menuReducer } from './reducers/menu.reducer'
 import { reducer as headerReducer } from './reducers/header.reducer'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
-import { environment } from './environments/environment'
+import { environment } from './environments/environment';
+import { FilmListComponent } from './views/film-list/film-list.component';
+import { FilmDetailComponent } from './views/film-detail/film-detail.component'
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidenavComponent,
-    SidenavelementComponent
+    SidenavelementComponent,
+    FilmListComponent,
+    FilmDetailComponent
   ],
   imports: [
     BrowserModule,

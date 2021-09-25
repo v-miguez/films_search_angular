@@ -6,7 +6,6 @@ export function reducer(
   state: HeaderProperties = { menuIcon: true, title: 'Inicio' },
   action: HeaderActions.Actions
 ) {
-  console.log({ ...state }, action)
   switch (action.type) {
     case HeaderActions.SET_HEADER_PROPERTIES:
       return tassign(state, action.payload)

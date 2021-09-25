@@ -12,8 +12,8 @@
   </div>
   <div class="list-colum">
     <app-sidenavelement
-      *ngFor="let a of menuList"
-      title="{{ a.title }}"
+      *ngFor="let element of menuList"
+      [elementData]="element"
     ></app-sidenavelement>
   </div>
 </div>

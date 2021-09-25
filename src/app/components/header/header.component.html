@@ -7,11 +7,13 @@
   >
     menu
   </mat-icon>
-  <span class="header-title" (click)="changeIcon()">
+  <span class="header-title">
     {{ headerProperties.title }}
   </span>
 </div>
 
 <ng-template #arrowIcon>
-  <mat-icon aria-hidden="false" class="header-icon"> arrow_back </mat-icon>
+  <mat-icon aria-hidden="false" class="header-icon" (click)="goBack()">
+    arrow_back
+  </mat-icon>
 </ng-template>

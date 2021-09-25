@@ -5,6 +5,9 @@ import { getTranslocoModule } from '../../transloco-testing.module'
 import { MaterialModule } from '../../material.module'
 import { SidenavelementComponent } from './components/sidenavelement/sidenavelement.component'
 import { provideMockStore } from 'ngrx-mockstore'
+import { RouterTestingModule } from '@angular/router/testing'
+import { routes } from '../../app-routing.module'
+import { AppModule } from '../../app.module'
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent
@@ -13,8 +16,13 @@ describe('SidenavComponent', () => {
   beforeEach(async () => {
     const initialState = { show: false }
     await TestBed.configureTestingModule({
-      declarations: [SidenavComponent, SidenavelementComponent],
-      imports: [getTranslocoModule(), MaterialModule],
+      declarations: [],
+      imports: [
+        AppModule,
+        getTranslocoModule(),
+        MaterialModule,
+        RouterTestingModule.withRoutes(routes)
+      ],
       providers: [provideMockStore({ initialState })]
     }).compileComponents()
   })

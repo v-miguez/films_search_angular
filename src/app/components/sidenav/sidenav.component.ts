@@ -3,7 +3,6 @@ import { MenuElement } from '../../shared/models/MenuElement.model'
 import { MenuConfiguration } from '../../../assets/MenuConfiguration'
 import { AppState } from '../../app.state'
 import { Store } from '@ngrx/store'
-import * as MenuActions from '../../actions/menu.actions'
 import { DispatchersService } from '../../services/dispatchers.service'
 @Component({
   selector: 'app-sidenav',
@@ -18,4 +17,5 @@ export class SidenavComponent {
   hideMenuClick() {
     this.dispatcherService.toggleSidenav(false)
   }
+
 }
