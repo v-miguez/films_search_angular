@@ -1,9 +1,9 @@
 import { Component } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { AppState } from '../../app.state'
-import * as MenuActions from '../../actions/menu.actions'
-import { ShowMenuIcon } from '../../shared/models/Header.model'
+import { HeaderProperties } from '../../shared/models/Header.model'
 import { Observable } from 'rxjs'
+import { DispatchersService } from '../../services/dispatchers.service'
 
 @Component({
   selector: 'app-header',
@@ -13,14 +13,23 @@ import { Observable } from 'rxjs'
 export class HeaderComponent {
   pageTitle = 'Inicio'
   showMenu = true
-  public showMenuIcon: Observable<ShowMenuIcon>
+  public headerProperties: Observable<HeaderProperties>
 
-  constructor(private store: Store<AppState>) {
-    this.showMenuIcon = this.store.select('showMenuIcon')
-    this.showMenuIcon.subscribe(e => console.log(e))
+  constructor(
+    private store: Store<AppState>,
+    private dispatchersService: DispatchersService
+  ) {
+    this.headerProperties = this.store.select('headerProperties')
   }
 
   showMenuClick() {
-    this.store.dispatch(new MenuActions.ShowMenu({ show: true }))
+    this.dispatchersService.toggleSidenav(true)
+  }
+
+  changeIcon() {
+    this.dispatchersService.setHeaderProperties({
+      menuIcon: false,
+      title: 'HOla'
+    })
   }
 }

@@ -1,3 +1,4 @@
-export interface ShowMenuIcon {
-  show: boolean
+export interface HeaderProperties {
+  menuIcon: boolean,
+  title: string
 }

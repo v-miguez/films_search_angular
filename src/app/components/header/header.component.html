@@ -1,23 +1,17 @@
-<div class="header">
+<div class="header" *ngIf="headerProperties | async; let headerProperties">
   <mat-icon
     aria-hidden="false"
-    aria-label="Example menu icon"
     class="header-icon"
-    *ngIf="showMenuIcon | async; else arrowIcon"
+    *ngIf="headerProperties.menuIcon; else arrowIcon"
     (click)="showMenuClick()"
   >
     menu
   </mat-icon>
-
-  <span class="header-title">{{ pageTitle }}</span>
+  <span class="header-title" (click)="changeIcon()">
+    {{ headerProperties.title }}
+  </span>
 </div>
 
 <ng-template #arrowIcon>
-  <mat-icon
-    aria-hidden="false"
-    aria-label="Example menu icon"
-    class="header-icon"
-  >
-    arrow_back
-  </mat-icon>
+  <mat-icon aria-hidden="false" class="header-icon"> arrow_back </mat-icon>
 </ng-template>

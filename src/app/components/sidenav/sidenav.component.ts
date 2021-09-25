@@ -4,6 +4,7 @@ import { MenuConfiguration } from '../../../assets/MenuConfiguration'
 import { AppState } from '../../app.state'
 import { Store } from '@ngrx/store'
 import * as MenuActions from '../../actions/menu.actions'
+import { DispatchersService } from '../../services/dispatchers.service'
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -12,9 +13,9 @@ import * as MenuActions from '../../actions/menu.actions'
 })
 export class SidenavComponent {
   menuList: MenuElement[] = MenuConfiguration
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<AppState>, private dispatcherService: DispatchersService) {}
 
   hideMenuClick() {
-    this.store.dispatch(new MenuActions.HideMenu({ show: false }))
+    this.dispatcherService.toggleSidenav(false)
   }
 }

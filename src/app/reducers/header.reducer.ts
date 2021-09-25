@@ -1,16 +1,16 @@
-import { ShowMenuIcon } from '../shared/models/Header.model'
+import { HeaderProperties } from '../shared/models/Header.model'
 import * as HeaderActions from '../actions/header.actions'
-
-
+import { tassign } from 'tassign'
 
 export function reducer(
-  state: ShowMenuIcon = { show: true },
+  state: HeaderProperties = { menuIcon: true, title: 'Inicio' },
   action: HeaderActions.Actions
 ) {
+  console.log({ ...state }, action)
   switch (action.type) {
-    case HeaderActions.SHOW_MENU_ICON:
-      return [state.show, action.payload]
+    case HeaderActions.SET_HEADER_PROPERTIES:
+      return tassign(state, action.payload)
     default:
-      return state.show
+      return state
   }
 }
