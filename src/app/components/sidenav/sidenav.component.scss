@@ -1,0 +1,29 @@
+@import '../../../variables.scss';
+.side-nav {
+  width: 80vw;
+  max-width: 400px;
+  height: 100vh;
+
+  position: absolute;
+  top: 0;
+
+  background-color: $s-dark;
+
+  padding: $medium $base;
+  color: $base-color;
+
+  .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .icon {
+      cursor: pointer;
+    }
+    span {
+      font-size: $font-medium;
+    }
+  }
+  .list-colum {
+    margin-top: $small;
+  }
+}

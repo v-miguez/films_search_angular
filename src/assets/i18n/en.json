@@ -1,3 +1,9 @@
 {
-    "hello": "Hello"
+  "hello": "Hello",
+  "sidenav": {
+    "title": "Menu",
+    "films": "Films",
+    "actors": "Actors",
+    "studies": "Studies"
+  }
 }

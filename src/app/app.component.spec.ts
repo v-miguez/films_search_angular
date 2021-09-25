@@ -1,20 +1,34 @@
-import { TestBed } from '@angular/core/testing'
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { RouterTestingModule } from '@angular/router/testing'
 import { AppComponent } from './app.component'
-import { render, screen } from '@testing-library/angular'
 import { getTranslocoModule } from './transloco-testing.module'
 import { HeaderComponent } from './components/header/header.component'
 import { MaterialModule } from './material.module'
+import { SidenavComponent } from './components/sidenav/sidenav.component'
+import { SidenavelementComponent } from './components/sidenav/components/sidenavelement/sidenavelement.component'
 
 describe('AppComponent', () => {
+  let component: AppComponent
+  let fixture: ComponentFixture<AppComponent>
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule, getTranslocoModule(), MaterialModule],
-      declarations: [AppComponent, HeaderComponent]
+      declarations: [
+        AppComponent,
+        HeaderComponent,
+        SidenavComponent,
+        SidenavelementComponent
+      ]
     }).compileComponents()
   })
-  test('should render Header', async () => {
-    await render(AppComponent)
-    expect(screen.getByText('Inicio'))
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
+
+  it('should create', () => {
+    expect(component).toBeTruthy()
   })
 })

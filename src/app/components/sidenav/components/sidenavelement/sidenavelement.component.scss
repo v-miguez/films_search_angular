@@ -1,0 +1,18 @@
+@import '../../../../../variables.scss';
+.sidenav-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  border-bottom: 1px solid white;
+
+  padding: $xtiny 0;
+  margin-bottom: $small;
+
+  cursor: pointer;
+  &:active {
+    border: 1px solid white;
+    border-radius: 4px;
+  }
+}

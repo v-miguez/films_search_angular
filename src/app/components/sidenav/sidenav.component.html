@@ -1,0 +1,14 @@
+<div class="side-nav">
+  <div class="title-row">
+    <span> {{ 'sidenav.title' | transloco }}</span>
+    <mat-icon aria-hidden="false" aria-label="Example menu icon" class="icon">
+      close
+    </mat-icon>
+  </div>
+  <div class="list-colum">
+    <app-sidenavelement
+      *ngFor="let a of menuList"
+      title="{{ a.title }}"
+    ></app-sidenavelement>
+  </div>
+</div>
