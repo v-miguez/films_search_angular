@@ -1,0 +1,18 @@
+@import '../../../variables.scss';
+
+.film-list-wrapper {
+  .film-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: $tiny;
+    padding: $small;
+    max-width: 1300px;
+    margin: 0 auto;
+    @media screen and (max-width: $screen-small) {
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: $screen-small) and (max-width: $screen-medium) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

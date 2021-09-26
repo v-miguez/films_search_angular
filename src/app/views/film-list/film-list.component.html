@@ -1,1 +1,9 @@
-<p (click)="navigate()">film-list works!</p>
+<div class="film-list-wrapper" appHidesidenav>
+  <div class="film-list">
+    <app-filmcard
+      *ngFor="
+        let card of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      "
+    ></app-filmcard>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+@import '../../../../../variables.scss';
+
+.film-card {
+  border: 1px solid $p-dark;
+  padding: $mini;
+  height: $xxlarge;
+  max-width: $xxlarge;
+  border-radius: $xtiny;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    font-weight: bold;
+  }
+  .film-img {
+    width: 100%;
+    background-color: red;
+    flex-grow: 1;
+    margin: $xtiny 0;
+  }
+  .film-tags-row {
+    .film-tag {
+      font-weight: lighter;
+      cursor: pointer;
+      color: #c6c6c6;
+      font-size: $font-small;
+      padding: $xtiny;
+      &:active {
+        border: 1px solid black;
+        border-radius: 10%;
+      }
+    }
+  }
+}

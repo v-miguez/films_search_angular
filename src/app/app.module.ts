@@ -14,9 +14,11 @@ import { StoreModule } from '@ngrx/store'
 import { reducer as menuReducer } from './reducers/menu.reducer'
 import { reducer as headerReducer } from './reducers/header.reducer'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
-import { environment } from './environments/environment';
-import { FilmListComponent } from './views/film-list/film-list.component';
+import { environment } from './environments/environment'
+import { FilmListComponent } from './views/film-list/film-list.component'
 import { FilmDetailComponent } from './views/film-detail/film-detail.component'
+import { FilmCardComponent } from './views/film-list/components/film-card/filmcard.component'
+import { HidesidenavDirective } from './directives/hidesidenav.directive'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { FilmDetailComponent } from './views/film-detail/film-detail.component'
     SidenavComponent,
     SidenavelementComponent,
     FilmListComponent,
-    FilmDetailComponent
+    FilmDetailComponent,
+    FilmCardComponent,
+    HidesidenavDirective
   ],
   imports: [
     BrowserModule,

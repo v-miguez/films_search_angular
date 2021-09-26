@@ -2,13 +2,13 @@
 
 $p-light: #7953d2;
 $p-dark: #000070;
-$s-light: #ffab00;
-$s-dark: #c67c00;
+$s-light: #795548;
+$s-dark: #a98274;
 $base-color: #fafafa;
 
 /* font-sizes */
 $font-small: 12px;
-$font-form-label: 14px;
+$font-regular: 14px;
 $font-medium: 18px;
 $font-large: 24px;
 
@@ -21,3 +21,10 @@ $small: 25px;
 $base: 30px;
 $medium: 40px;
 $large: 60px;
+$xlarge: 150px;
+$xxlarge: 300px;
+
+/* screen sizes */
+
+$screen-small: 700px;
+$screen-medium: 1200px;

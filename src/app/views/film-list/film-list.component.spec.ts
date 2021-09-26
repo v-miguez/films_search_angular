@@ -4,6 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing'
 import { provideMockStore } from 'ngrx-mockstore'
 import { routes } from '../../app-routing.module'
 import { FilmDetailComponent } from '../film-detail/film-detail.component'
+import { FilmCardComponent } from './components/film-card/filmcard.component'
 import { FilmListComponent } from './film-list.component'
 
 describe('FilmListComponent', () => {
@@ -12,7 +13,7 @@ describe('FilmListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FilmListComponent, FilmDetailComponent],
+      declarations: [FilmListComponent, FilmDetailComponent, FilmCardComponent],
       imports: [RouterTestingModule.withRoutes(routes)],
       providers: [provideMockStore({})]
     }).compileComponents()

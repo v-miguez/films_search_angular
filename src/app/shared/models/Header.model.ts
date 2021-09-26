@@ -1,4 +1,4 @@
 export interface HeaderProperties {
-  menuIcon: boolean,
+  menuIcon: boolean
   title: string
 }
