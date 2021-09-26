@@ -1,9 +1,9 @@
 <div class="film-list-wrapper" appHidesidenav>
   <div class="film-list">
     <app-filmcard
-      *ngFor="
-        let card of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-      "
+      *ngFor="let movie of filmList | async; trackBy: trackByItems"
+      [movie]="movie"
     ></app-filmcard>
   </div>
+  <app-spinner *ngIf="showSpinner | async"></app-spinner>
 </div>

@@ -1,9 +1,9 @@
-<div class="film-card" [routerLink]="['pelicula/:title']" appHidesidenav>
-  <h2>Titulo película</h2>
-  <div class="film-img"></div>
+<div class="film-card" (click)="navigate(movie)" appHidesidenav>
+  <h2>{{ movie.title }}</h2>
+  <div class="film-img">
+    <img [src]="movie.poster" alt="movie poster" />
+  </div>
   <div class="film-tags-row">
-    <span class="film-tag">#LOL</span>
-    <span class="film-tag">#LOL</span>
-    <span class="film-tag">#LOL</span>
+    <span class="film-tag" *ngFor="let tag of movie.genre">#{{ tag }}</span>
   </div>
 </div>

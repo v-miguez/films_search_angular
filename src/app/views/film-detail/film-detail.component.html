@@ -1,1 +1,32 @@
-<p>film-detail works!</p>
+<div class="film-detail-wrapper" appHidesidenav>
+  <div class="film-detail">
+    <div class="film-img">
+      <img [src]="movie.poster" alt="" />
+    </div>
+    <div class="score">Puntuación en IMDB: {{ movie.imdbRating }}</div>
+    <div class="duration">Duración: {{ movie.duration }}</div>
+    <div class="actors">
+      Actores
+      <ul>
+        <li *ngFor="let actor of actors">
+          {{ actor.first_name }}
+        </li>
+      </ul>
+    </div>
+    <div class="study">
+      Estudio
+      <ul>
+        <li *ngFor="let company of companies">
+          {{ company.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="tags">
+      tags
+      <div>
+        <span *ngFor="let tag of movie.genre">#{{ tag }}</span>
+      </div>
+    </div>
+  </div>
+  <app-spinner *ngIf="showSpinner | async"></app-spinner>
+</div>

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { TranslocoRootModule } from './transloco-root.module'
 import { HeaderComponent } from './components/header/header.component'
 import { MaterialModule } from './material.module'
@@ -15,10 +15,12 @@ import { reducer as menuReducer } from './reducers/menu.reducer'
 import { reducer as headerReducer } from './reducers/header.reducer'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { environment } from './environments/environment'
-import { FilmListComponent } from './views/film-list/film-list.component'
-import { FilmDetailComponent } from './views/film-detail/film-detail.component'
-import { FilmCardComponent } from './views/film-list/components/film-card/filmcard.component'
+import { LoadinginterceptorService } from './services/loadinginterceptor.service'
 import { HidesidenavDirective } from './directives/hidesidenav.directive'
+import { FilmCardComponent } from './views/film-list/components/film-card/filmcard.component'
+import { FilmDetailComponent } from './views/film-detail/film-detail.component'
+import { FilmListComponent } from './views/film-list/film-list.component'
+import { SpinnerComponent } from './components/spinner/spinner.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,8 @@ import { HidesidenavDirective } from './directives/hidesidenav.directive'
     FilmListComponent,
     FilmDetailComponent,
     FilmCardComponent,
-    HidesidenavDirective
+    HidesidenavDirective,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,13 @@ import { HidesidenavDirective } from './directives/hidesidenav.directive'
     }),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadinginterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

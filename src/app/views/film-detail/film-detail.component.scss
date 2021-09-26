@@ -1,0 +1,52 @@
+@import '../../../variables.scss';
+.film-detail-wrapper {
+  .film-detail {
+    display: grid;
+    gap: $tiny;
+    grid-auto-rows: 1fr;
+    max-width: 1300px;
+    margin: 0 auto;
+    grid-template-areas:
+      'image image score '
+      'image image . '
+      'image image duration '
+      'actors . study '
+      'tags tags tags ';
+    .film-img {
+      width: 100%;
+      height: 300px;
+      grid-area: image;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .score {
+      grid-area: score;
+    }
+    .duration {
+      grid-area: duration;
+    }
+    .actors {
+      grid-area: actors;
+    }
+    .study {
+      grid-area: study;
+    }
+    .tags {
+      grid-area: tags;
+      span {
+        margin: $tiny;
+      }
+    }
+    @media screen and(max-width: $screen-small) {
+      grid-template-areas:
+        'image image  '
+        'image image  '
+        'score duration  '
+        'actors actors '
+        'study study'
+        'tags tags  ';
+    }
+  }
+}

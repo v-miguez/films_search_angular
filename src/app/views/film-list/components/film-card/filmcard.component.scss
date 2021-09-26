@@ -15,9 +15,12 @@
   }
   .film-img {
     width: 100%;
-    background-color: red;
     flex-grow: 1;
     margin: $xtiny 0;
+    img {
+      width: 100%;
+      height: 200px;
+    }
   }
   .film-tags-row {
     .film-tag {
