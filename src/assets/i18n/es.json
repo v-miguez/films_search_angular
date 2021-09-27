@@ -5,5 +5,12 @@
     "films": "Películas",
     "actors": "Actores",
     "studies": "Estudios"
+  },
+  "detail": {
+    "actors": "Actores",
+    "study": "Estudio",
+    "tags": "Géneros",
+    "score": "Puntuación",
+    "duration": "Duración"
   }
 }

@@ -1,14 +1,14 @@
 export const MenuConfiguration = [
   {
     title: 'films',
-    goTo: ''
+    goTo: 'peliculas'
   },
   {
     title: 'actors',
-    goTo: ''
+    goTo: 'actores'
   },
   {
     title: 'studies',
-    goTo: ''
+    goTo: 'estudios'
   }
 ]

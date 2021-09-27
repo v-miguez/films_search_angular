@@ -1,6 +1,20 @@
 @import '../../../variables.scss';
 .film-detail-wrapper {
+  padding: $tiny;
   .film-detail {
+    display: grid;
+    grid-gap: 15px;
+    gap: 15px;
+    max-width: 1300px;
+    margin: 0 auto;
+    grid-template-areas:
+      'image image score '
+      'image image duration '
+      'actors . study '
+      'tags tags tags ';
+    height: calc(100vh - 80px);
+    grid-template-rows: repeat(4, 1fr);
+
     display: grid;
     gap: $tiny;
     grid-auto-rows: 1fr;
@@ -21,11 +35,31 @@
         height: 100%;
       }
     }
+    .title {
+      font-weight: bold;
+      font-size: $font-medium;
+      padding: $tiny;
+    }
+    .content {
+      color: #c7c7c7;
+    }
     .score {
       grid-area: score;
+      display: flex;
+      align-items: center;
+      @media screen and(max-width: $screen-small) {
+        display: flex;
+        flex-direction: column;
+      }
     }
     .duration {
       grid-area: duration;
+      display: flex;
+      align-items: center;
+      @media screen and(max-width: $screen-small) {
+        display: flex;
+        flex-direction: column;
+      }
     }
     .actors {
       grid-area: actors;
@@ -33,10 +67,23 @@
     .study {
       grid-area: study;
     }
+    .list {
+      .title {
+        border-bottom: 1px solid black;
+        width: 100%;
+      }
+      li {
+        padding: $tiny;
+      }
+    }
     .tags {
       grid-area: tags;
-      span {
-        margin: $tiny;
+      .tags-row {
+        display: flex;
+        span {
+          padding: $tiny;
+          display: block;
+        }
       }
     }
     @media screen and(max-width: $screen-small) {

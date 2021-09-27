@@ -13,6 +13,6 @@ export class SidenavelementComponent {
   constructor(private router: Router) {}
 
   goTo(path: string) {
-    this.router.navigate([''])
+    this.router.navigate([path])
   }
 }

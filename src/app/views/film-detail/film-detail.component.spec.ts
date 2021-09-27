@@ -14,6 +14,8 @@ import {
   HttpTestingController
 } from '@angular/common/http/testing'
 import { Router } from '@angular/router'
+import { FilmsModule } from '../../films.module'
+import { SharedModule } from '../../shared.module'
 
 class RouterStub {
   getCurrentNavigation() {
@@ -34,15 +36,13 @@ describe('FilmDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        FilmDetailComponent,
-        FilmListComponent,
-        FilmCardComponent,
-        SpinnerComponent
-      ],
+      declarations: [],
       imports: [
         RouterTestingModule.withRoutes(routes),
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        FilmsModule,
+        SharedModule,
+        AppModule
       ],
       providers: [
         provideMockStore({}),

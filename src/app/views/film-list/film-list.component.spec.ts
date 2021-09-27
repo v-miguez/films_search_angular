@@ -10,7 +10,9 @@ import { screen } from '@testing-library/dom'
 import { provideMockStore } from 'ngrx-mockstore'
 import { routes } from '../../app-routing.module'
 import { AppModule } from '../../app.module'
+import { FilmsModule } from '../../films.module'
 import { expectedMoviesList } from '../../services/builders/movies.builders'
+import { SharedModule } from '../../shared.module'
 import { FilmListComponent } from './film-list.component'
 
 describe('FilmListComponent', () => {
@@ -21,9 +23,11 @@ describe('FilmListComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [],
       imports: [
-        RouterTestingModule.withRoutes(routes),
         AppModule,
-        HttpClientTestingModule
+        RouterTestingModule.withRoutes(routes),
+        FilmsModule,
+        HttpClientTestingModule,
+        SharedModule
       ],
       providers: [
         provideMockStore({}),

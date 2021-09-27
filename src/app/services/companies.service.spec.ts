@@ -33,7 +33,7 @@ describe('CompaniesService', () => {
     const companiesArray = expectedCompaniesList
     const service: CompaniesService = TestBed.get(CompaniesService)
     service.getCompaniesById(2).then((result) => {
-      expect(result).toMatchObject({companiesArray})
+      expect(result).toMatchObject({ companiesArray })
     })
     const req = await httpMock.expectOne('http://localhost:3000/companies')
     req.flush(expectedCompaniesList)

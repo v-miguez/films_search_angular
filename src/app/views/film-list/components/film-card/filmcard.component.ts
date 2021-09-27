@@ -13,7 +13,7 @@ export class FilmCardComponent {
   constructor(private router: Router) {}
 
   navigate(movie: Movie) {
-    this.router.navigate([`/pelicula/${movie.title}`], {
+    this.router.navigate([`/peliculas/${movie.title}`], {
       state: { ...movie }
     })
   }

@@ -3,28 +3,40 @@
     <div class="film-img">
       <img [src]="movie.poster" alt="" />
     </div>
-    <div class="score">Puntuación en IMDB: {{ movie.imdbRating }}</div>
-    <div class="duration">Duración: {{ movie.duration }}</div>
-    <div class="actors">
-      Actores
+    <div class="score">
+      <span class="title">{{ 'detail.score' | transloco }}:</span>
+      <span class="content"> {{ movie.imdbRating }}</span>
+    </div>
+    <div class="duration">
+      <span class="title"> {{ 'detail.duration' | transloco }}: </span
+      ><span class="content"> {{ movie.duration }}</span>
+    </div>
+    <div class="actors list">
+      <p class="title">
+        {{ 'detail.actors' | transloco }}
+      </p>
       <ul>
-        <li *ngFor="let actor of actors">
+        <li *ngFor="let actor of actors" class="content">
           {{ actor.first_name }}
         </li>
       </ul>
     </div>
-    <div class="study">
-      Estudio
+    <div class="study list">
+      <p class="title">
+        {{ 'detail.study' | transloco }}
+      </p>
       <ul>
-        <li *ngFor="let company of companies">
+        <li *ngFor="let company of companies" class="content">
           {{ company.name }}
         </li>
       </ul>
     </div>
-    <div class="tags">
-      tags
-      <div>
-        <span *ngFor="let tag of movie.genre">#{{ tag }}</span>
+    <div class="tags list">
+      <p class="title">
+        {{ 'detail.tags' | transloco }}
+      </p>
+      <div class="tags-row">
+        <span *ngFor="let tag of movie.genre" class="content">#{{ tag }}</span>
       </div>
     </div>
   </div>
