@@ -1,7 +1,8 @@
 @import '../../../variables.scss';
 
 .film-list-wrapper {
-  height: 100vh;
+  height: 95vh;
+  overflow-y: scroll;
   .film-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -16,8 +17,23 @@
       grid-template-columns: 1fr 1fr;
     }
   }
-}
-.viewport .cdk-virtual-scroll-content-wrapper {
-  display: flex;
-  flex-direction: row;
+  .go-to-create-button {
+    position: fixed;
+    bottom: $large;
+    right: $large;
+    width: $large;
+    height: $large;
+    background-color: $s-dark;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-large;
+    color: white;
+    cursor: pointer;
+    border: 3px solid black;
+    &:hover {
+      background-color: $s-light;
+    }
+  }
 }

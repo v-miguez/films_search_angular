@@ -13,6 +13,7 @@ export class ActorsService {
   constructor(private http: HttpClient) {}
 
   readActorsList() {
+    this.getAllActors()
     return this.actorList
   }
 

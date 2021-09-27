@@ -1,0 +1,102 @@
+<form
+  class="create-film-form"
+  [formGroup]="form"
+  *ngIf="form"
+  (ngSubmit)="submitForm()"
+>
+  <mat-form-field class="input-field" appearance="fill">
+    <mat-label>Titulo</mat-label>
+    <input matInput placeholder="Titulo" value="" formControlName="title" />
+  </mat-form-field>
+  <mat-form-field class="input-field" appearance="fill">
+    <mat-label>Poster (url)</mat-label>
+    <input matInput placeholder="url" value="" formControlName="poster" />
+  </mat-form-field>
+  <div class="row">
+    <mat-form-field class="input-field" appearance="fill">
+      <mat-label>Género</mat-label>
+      <input matInput placeholder="Género" value="" formControlName="genre" />
+    </mat-form-field>
+    <mat-icon aria-hidden="false" (click)="addGenre()" class="add-button"
+      >add</mat-icon
+    >
+  </div>
+  <div class="tag-row">
+    <div class="tag" *ngFor="let genre of genresList">
+      <span>#{{ genre }}</span>
+      <mat-icon
+        aria-hidden="false"
+        (click)="deleteGenre(genre)"
+        class="delete-button"
+        >remove</mat-icon
+      >
+    </div>
+  </div>
+  <mat-form-field class="select-field" appearance="fill">
+    <mat-label>Actores</mat-label>
+    <mat-select (selectionChange)="addActor($event.value)">
+      <mat-option *ngFor="let actor of actors | async" [value]="actor.id">
+        {{ actor.first_name }} {{ actor.last_name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="tag-row">
+    <div class="tag" *ngFor="let actor of actorList">
+      <span>{{ actor.first_name }}</span>
+      <mat-icon
+        aria-hidden="false"
+        (click)="deleteActor(actor)"
+        class="delete-button"
+        >remove</mat-icon
+      >
+    </div>
+  </div>
+  <mat-form-field class="select-field" appearance="fill">
+    <mat-label>Estudio</mat-label>
+    <mat-select formControlName="company">
+      <mat-option *ngFor="let company of companiesList" [value]="company.id">
+        {{ company.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="input-field" appearance="fill">
+    <mat-label>Año</mat-label>
+    <input
+      matInput
+      placeholder="Año"
+      type="number"
+      value=""
+      formControlName="year"
+    />
+  </mat-form-field>
+  <mat-form-field class="input-field" appearance="fill">
+    <mat-label>Duración</mat-label>
+    <input
+      matInput
+      placeholder="Duración"
+      type="number"
+      value=""
+      formControlName="duration"
+    />
+  </mat-form-field>
+  <mat-form-field class="input-field" appearance="fill">
+    <mat-label>Puntuación</mat-label>
+    <input
+      matInput
+      placeholder="Puntuación"
+      type="number"
+      value=""
+      formControlName="score"
+    />
+  </mat-form-field>
+  <div class="button-row">
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="isButtonDisabled()"
+    >
+      Crear
+    </button>
+  </div>
+</form>

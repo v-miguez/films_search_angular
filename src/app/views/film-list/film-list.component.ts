@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 import { Observable } from 'rxjs'
 import { DispatchersService } from '../../services/dispatchers.service'
 import { FilmsService } from '../../services/films.service'
@@ -16,7 +17,8 @@ export class FilmListComponent implements OnInit {
   constructor(
     private dispatcherService: DispatchersService,
     private filmsService: FilmsService,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -35,4 +37,6 @@ export class FilmListComponent implements OnInit {
   trackByItems(index: number, item: Movie): number {
     return item.id
   }
+
+
 }

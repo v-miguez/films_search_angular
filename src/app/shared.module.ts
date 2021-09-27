@@ -1,5 +1,8 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
+import { ReactiveFormsModule } from '@angular/forms'
+import { MatNativeDateModule } from '@angular/material/core'
+import { MatDatepickerModule } from '@angular/material/datepicker'
 import { HeaderComponent } from './components/header/header.component'
 import { SidenavelementComponent } from './components/sidenav/components/sidenavelement/sidenavelement.component'
 import { SidenavComponent } from './components/sidenav/sidenav.component'
@@ -16,7 +19,12 @@ import { TranslocoRootModule } from './transloco-root.module'
     HidesidenavDirective,
     SpinnerComponent
   ],
-  imports: [MaterialModule, TranslocoRootModule, CommonModule],
+  imports: [
+    MaterialModule,
+    TranslocoRootModule,
+    CommonModule,
+    ReactiveFormsModule,
+  ],
   exports: [
     HeaderComponent,
     SidenavComponent,
@@ -24,7 +32,9 @@ import { TranslocoRootModule } from './transloco-root.module'
     TranslocoRootModule,
     CommonModule,
     HidesidenavDirective,
-    SpinnerComponent
-  ]
+    SpinnerComponent,
+    ReactiveFormsModule,
+  ],
+  providers: [MatDatepickerModule]
 })
 export class SharedModule {}

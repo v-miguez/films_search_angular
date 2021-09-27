@@ -21,4 +21,9 @@ export class FilmsService {
     this.getMoviesRequest()
     return this.moviesList
   }
+
+  postMovie(movie: Movie): void {
+    this.http.post<Movie>(`${this.basePath}/movies`, movie).toPromise()
+    this.getMoviesRequest()
+  }
 }

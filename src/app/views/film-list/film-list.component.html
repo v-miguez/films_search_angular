@@ -6,4 +6,11 @@
     ></app-filmcard>
   </div>
   <app-spinner *ngIf="showSpinner | async" data-testid="spinner"></app-spinner>
+  <div
+    [routerLink]="['/peliculas/crear']"
+    class="go-to-create-button"
+    appHidesidenav
+  >
+    <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+  </div>
 </div>

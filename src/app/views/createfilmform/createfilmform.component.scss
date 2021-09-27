@@ -1,0 +1,54 @@
+@import '../../../variables.scss';
+.create-film-form {
+  width: 100%;
+  .input-field {
+    width: 100%;
+    margin: $xtiny 0;
+  }
+  .row {
+    display: flex;
+    align-items: center;
+    .add-button {
+      cursor: pointer;
+    }
+  }
+  .select-field {
+    width: 100%;
+    margin: $xtiny 0;
+  }
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    .tag {
+      padding: $xtiny;
+      margin: 0 $xtiny;
+      border: 1px solid black;
+      border-radius: 4px;
+      position: relative;
+      .delete-button {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        font-size: $font-regular;
+        width: $font-regular;
+        height: $font-regular;
+        background-color: red;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .button-row {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    button {
+      cursor: pointer;
+    }
+  }
+}

@@ -11,7 +11,8 @@ export class CompaniesService {
   basePath: string = environment.basePath
   constructor(private http: HttpClient) {}
 
-  readCompaniesList(): Company[] {
+  async readCompaniesList(): Promise<Company[]> {
+    await this.getAllCompanies()
     return this.companiesList
   }
 

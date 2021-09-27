@@ -22,7 +22,7 @@ describe('CompaniesService', () => {
 
   it(`should return company list`, () => {
     const service: CompaniesService = TestBed.get(CompaniesService)
-    const companies: Company[] = service.readCompaniesList()
+    const companies: Promise<Company[]> = service.readCompaniesList()
     expect(companies).toBeInstanceOf(Object)
   })
 
