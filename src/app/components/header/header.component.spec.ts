@@ -8,9 +8,7 @@ import { MaterialModule } from '../../material.module'
 import { getTranslocoModule } from '../../transloco-testing.module'
 
 import { HeaderComponent } from './header.component'
-let store: Store<AppState>
-let fixture: ComponentFixture<HeaderComponent>
-let component
+
 describe('HeaderComponent', () => {
   const initialState: AppState = {
     headerProperties: { menuIcon: false, title: 'Inicio' },

@@ -13,13 +13,8 @@ export class FilmsService {
   moviesList: Observable<Movie[]> = new Observable()
   constructor(private http: HttpClient) {}
 
-  private getMoviesRequest() {
+  private getMoviesRequest(): void {
     this.moviesList = this.http.get<Movie[]>(`${this.basePath}/movies`)
-  }
-
-  postMovieRequest(movie: Movie) {
-    this.http.post(`${this.basePath}/movies`, movie)
-    this.readMoviesList()
   }
 
   readMoviesList(): Observable<Movie[]> {

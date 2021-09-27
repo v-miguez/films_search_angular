@@ -3,7 +3,6 @@ import {
   HttpTestingController
 } from '@angular/common/http/testing'
 import { TestBed } from '@angular/core/testing'
-import { Observable } from 'rxjs'
 import { Company } from '../shared/models/Company.model'
 import { expectedCompaniesList } from './builders/companies.builder'
 

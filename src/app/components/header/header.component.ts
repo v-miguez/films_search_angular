@@ -24,11 +24,11 @@ export class HeaderComponent {
     this.headerProperties = this.store.select('headerProperties')
   }
 
-  showMenuClick() {
+  showMenuClick(): void {
     this.dispatchersService.toggleSidenav(true)
   }
 
-  goBack() {
+  goBack(): void {
     this.location.back()
   }
 }

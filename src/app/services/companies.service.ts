@@ -11,11 +11,11 @@ export class CompaniesService {
   basePath: string = environment.basePath
   constructor(private http: HttpClient) {}
 
-  readCompaniesList() {
+  readCompaniesList(): Company[] {
     return this.companiesList
   }
 
-  async getAllCompanies() {
+  async getAllCompanies(): Promise<void> {
     this.companiesList = await this.http
       .get<Company[]>(`${this.basePath}/companies`)
       .toPromise()
@@ -31,7 +31,7 @@ export class CompaniesService {
     return companiesArray
   }
 
-  private companyHasFilm(filmId: number, company: Company) {
+  private companyHasFilm(filmId: number, company: Company): boolean {
     return company.movies.some((e) => filmId == e)
   }
 }

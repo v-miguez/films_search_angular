@@ -16,9 +16,6 @@ import {
 import { AppState } from './app.state'
 
 describe('AppComponent', () => {
-  let component: AppComponent
-  let fixture: ComponentFixture<AppComponent>
-
   beforeEach(async () => {
     const initialState: AppState = {
       showMenu: { show: true },

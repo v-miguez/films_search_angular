@@ -4,15 +4,9 @@ import { RouterTestingModule } from '@angular/router/testing'
 import { provideMockStore } from 'ngrx-mockstore'
 import { routes } from '../../app-routing.module'
 import { AppModule } from '../../app.module'
-import { SpinnerComponent } from '../../components/spinner/spinner.component'
-import { FilmCardComponent } from '../film-list/components/film-card/filmcard.component'
-import { FilmListComponent } from '../film-list/film-list.component'
 
 import { FilmDetailComponent } from './film-detail.component'
-import {
-  HttpClientTestingModule,
-  HttpTestingController
-} from '@angular/common/http/testing'
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { Router } from '@angular/router'
 import { FilmsModule } from '../../films.module'
 import { SharedModule } from '../../shared.module'

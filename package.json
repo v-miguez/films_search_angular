@@ -10,7 +10,7 @@
     "test:coverage": "jest --coverage",
     "prettier": "prettier --write src/**/*.{ts,js,css,html}",
     "prepare": "husky install",
-    "lint": "eslint \"**/*.{ts,tsx}\"  --quiet --fix"
+    "lint": "eslint \"**/*.{ts,tsx}\"  --fix"
   },
   "husky": {
     "hooks": {

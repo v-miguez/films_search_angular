@@ -3,7 +3,7 @@ import {
   HttpClientTestingModule,
   HttpTestingController
 } from '@angular/common/http/testing'
-import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { TestBed } from '@angular/core/testing'
 import { RouterTestingModule } from '@angular/router/testing'
 import { render } from '@testing-library/angular'
 import { screen } from '@testing-library/dom'
@@ -16,9 +16,6 @@ import { SharedModule } from '../../shared.module'
 import { FilmListComponent } from './film-list.component'
 
 describe('FilmListComponent', () => {
-  let component: FilmListComponent
-  let fixture: ComponentFixture<FilmListComponent>
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [],

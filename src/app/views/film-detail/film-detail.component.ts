@@ -39,11 +39,11 @@ export class FilmDetailComponent implements OnInit {
     this.getCompanies()
   }
 
-  async getActors() {
+  async getActors(): Promise<void> {
     this.actors = await this.actorService.getActorsById(this.movie.actors)
   }
 
-  async getCompanies() {
+  async getCompanies(): Promise<void> {
     this.companies = await this.companiesService.getCompaniesById(this.movie.id)
   }
 }

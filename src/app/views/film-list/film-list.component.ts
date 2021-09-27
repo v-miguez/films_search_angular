@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { Router } from '@angular/router'
-import { Store } from '@ngrx/store'
-import { NgxSpinnerService } from 'ngx-spinner'
 import { Observable } from 'rxjs'
-import { AppState } from '../../app.state'
 import { DispatchersService } from '../../services/dispatchers.service'
 import { FilmsService } from '../../services/films.service'
 import { LoadingService } from '../../services/loadingservice.service'
@@ -32,7 +28,7 @@ export class FilmListComponent implements OnInit {
     this.showSpinner = this.loadingService.isLoading$
   }
 
-  getFilmList() {
+  getFilmList(): void {
     this.filmList = this.filmsService.readMoviesList()
   }
 

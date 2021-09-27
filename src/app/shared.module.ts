@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common'
-import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
 import { HeaderComponent } from './components/header/header.component'
 import { SidenavelementComponent } from './components/sidenav/components/sidenavelement/sidenavelement.component'
