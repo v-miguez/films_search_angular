@@ -1,4 +1,9 @@
-<div class="film-card" (click)="navigate(movie)" appHidesidenav>
+<div
+  class="film-card"
+  (click)="navigate(movie)"
+  appHidesidenav
+  data-testid="film-card"
+>
   <h2>{{ movie.title }}</h2>
   <div class="film-img">
     <img [src]="movie.poster" alt="movie poster" />

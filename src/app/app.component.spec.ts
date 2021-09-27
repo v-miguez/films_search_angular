@@ -7,16 +7,32 @@ import { MaterialModule } from './material.module'
 import { SidenavComponent } from './components/sidenav/sidenav.component'
 import { SidenavelementComponent } from './components/sidenav/components/sidenavelement/sidenavelement.component'
 import { provideMockStore } from 'ngrx-mockstore'
+import { render } from '@testing-library/angular'
+import { screen } from '@testing-library/dom'
+import {
+  BrowserAnimationsModule,
+  NoopAnimationsModule
+} from '@angular/platform-browser/animations'
+import { AppState } from './app.state'
 
 describe('AppComponent', () => {
   let component: AppComponent
   let fixture: ComponentFixture<AppComponent>
 
   beforeEach(async () => {
-    const initialState = { show: false }
+    const initialState: AppState = {
+      showMenu: { show: true },
+      headerProperties: { title: 'Inicio', menuIcon: true }
+    }
 
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, getTranslocoModule(), MaterialModule],
+      imports: [
+        RouterTestingModule,
+        getTranslocoModule(),
+        MaterialModule,
+        NoopAnimationsModule,
+        BrowserAnimationsModule
+      ],
       declarations: [
         AppComponent,
         HeaderComponent,
@@ -26,13 +42,14 @@ describe('AppComponent', () => {
       providers: [provideMockStore({ initialState })]
     }).compileComponents()
   })
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent)
-    component = fixture.componentInstance
-    fixture.detectChanges()
+
+  it('it should render sidenav', async () => {
+    await render(AppComponent)
+    screen.getByText('Menú')
   })
 
-  it('should create', () => {
-    expect(component).toBeTruthy()
+  it('it should render header', async () => {
+    await render(AppComponent)
+    screen.getByText('Inicio')
   })
 })
