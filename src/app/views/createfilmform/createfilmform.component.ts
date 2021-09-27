@@ -65,7 +65,7 @@ export class CreatefilmformComponent implements OnInit {
   }
 
   chosenYearHandler(ev, input): void {
-    let { _d } = ev
+    const { _d } = ev
     this.selectYear = _d
     input._destroyPopup()
   }
@@ -86,7 +86,7 @@ export class CreatefilmformComponent implements OnInit {
   }
 
   async findActorById(actorId: string): Promise<Actor> {
-    let actorsArray = await this.actors.toPromise()
+    const actorsArray = await this.actors.toPromise()
 
     return actorsArray.find((actor: Actor) => actor.id.toString() == actorId)
   }
@@ -96,7 +96,7 @@ export class CreatefilmformComponent implements OnInit {
   }
 
   submitForm(): void {
-    let payload = {
+    const payload = {
       ...this.form.value,
       actors: this.actorList.map((actor) => actor.id)
     }

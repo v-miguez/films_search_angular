@@ -37,6 +37,4 @@ export class FilmListComponent implements OnInit {
   trackByItems(index: number, item: Movie): number {
     return item.id
   }
-
-
 }

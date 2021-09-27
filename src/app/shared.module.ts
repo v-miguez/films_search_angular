@@ -23,7 +23,7 @@ import { TranslocoRootModule } from './transloco-root.module'
     MaterialModule,
     TranslocoRootModule,
     CommonModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     HeaderComponent,
@@ -33,7 +33,7 @@ import { TranslocoRootModule } from './transloco-root.module'
     CommonModule,
     HidesidenavDirective,
     SpinnerComponent,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [MatDatepickerModule]
 })
