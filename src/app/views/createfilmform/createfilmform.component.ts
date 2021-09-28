@@ -4,6 +4,7 @@ import { MAT_DATE_FORMATS } from '@angular/material/core'
 import { Observable } from 'rxjs'
 import { ActorsService } from '../../services/actors.service'
 import { CompaniesService } from '../../services/companies.service'
+import { DispatchersService } from '../../services/dispatchers.service'
 import { FilmsService } from '../../services/films.service'
 import { Actor } from '../../shared/models/Actor.model'
 import { Company } from '../../shared/models/Company.model'
@@ -35,10 +36,15 @@ export class CreatefilmformComponent implements OnInit {
     private fb: FormBuilder,
     private actorsService: ActorsService,
     private companiesService: CompaniesService,
-    private moviesService: FilmsService
+    private moviesService: FilmsService,
+    private dispatcherService: DispatchersService
   ) {}
 
   ngOnInit(): void {
+    this.dispatcherService.setHeaderProperties({
+      menuIcon: false,
+      title: 'Crear pelicula'
+    })
     this.buildForm()
     this.getCompanies()
     this.getActors()
